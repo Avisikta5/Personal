@@ -1,0 +1,341 @@
+﻿@model Hutch.ViewModels.IndexViewModel
+
+@{
+    ViewBag.Title = "Index";
+    <link href="~/Content/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/Banner.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/Category.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/TopProducts.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/OtherStores.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/NewArrivals.css" rel="stylesheet" />
+    <link href="~/Content/Styles/Index/FeaturedBrands.css" rel="stylesheet" />
+}
+
+<main class="main">
+
+    <div class="featured-brands">
+
+        <div class="featured-brand-wrapper">
+
+            <div class="featured-brands-container">
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "adidas"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Adidas.jpg" alt="adidas"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lee cooper"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Leecooper.jpg" alt="lee-cooper"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "balenciaga"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Balenciaga.jpg" alt="balenciaga"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "puma"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Puma.jpg" alt="puma"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "samsung"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Samsung.jpg" alt="samsung"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "nikon"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Nikon.jpg" alt="nikon"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "sony"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Sony.jpg" alt="sony"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lenskart"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Lenskart.jpg" alt="lenskart"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "zara"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Zara.jpg" alt="zara"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "dove"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Dove.jpg" alt="dove"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lakme"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Lakme.jpg" alt="lakme"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "boat"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Boat.jpg" alt="boat"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "whirlpool"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Whirlpool.jpg" alt="whirlpool"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "asus"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Asus.jpg" alt="asus"/>
+                </a>
+            </div>
+
+            
+            <div class="featured-brands-container">
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "adidas"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Adidas.jpg" alt="adidas"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lee cooper"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Leecooper.jpg" alt="lee-cooper"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "balenciaga"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Balenciaga.jpg" alt="balenciaga"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "puma"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Puma.jpg" alt="puma"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "samsung"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Samsung.jpg" alt="samsung"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "nikon"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Nikon.jpg" alt="nikon"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "sony"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Sony.jpg" alt="sony"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lenskart"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Lenskart.jpg" alt="lenskart"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "zara"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Zara.jpg" alt="zara"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "dove"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Dove.jpg" alt="dove"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "lakme"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Lakme.jpg" alt="lakme"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "boat"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Boat.jpg" alt="boat"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "whirlpool"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Whirlpool.jpg" alt="whirlpool"/>
+                </a>
+
+                <a href="@Url.Action("FilterByBrand", "Home", new {brand = "asus"})" class="brand-card">
+                    <img src="~/Content/Assets/Brands/Asus.jpg" alt="asus"/>
+                </a>
+            </div>
+
+        </div>
+
+        
+    </div>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide banner" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Content/Assets/bg-01.jpg" class="banner-img" alt="">
+                <div class="carousel-caption">
+                    <h5>Original Sunglasses</h5>
+                    <p>Be different in your own way!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Assets/bg-11.jpg" class="banner-img" alt="">
+                <div class="carousel-caption">
+                    <h5>The New Fragrance</h5>
+                    <p>Your exclusive sitewide offer awaits.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Content/Assets/bg-30.jpg" class="banner-img" alt="">
+                <div class="carousel-caption">
+                    <h5>Lord Of The Rings</h5>
+                    <p>The new ring sensation</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <div class="hutch-categories-wrapper">
+
+        <div class="about-hutch-categories">
+
+            <h3>More on Hutch Stock</h3>
+            <p>Continue your search and get the best products on Hutch Stock</p>
+
+            <div class="dummy-category-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M238,200a6,6,0,0,1-6,6H214v18a6,6,0,0,1-12,0V206H184a6,6,0,0,1,0-12h18V176a6,6,0,0,1,12,0v18h18A6,6,0,0,1,238,200Zm-17-77.18-93,54.23L35,122.82a6,6,0,0,0-6,10.36l96,56a6,6,0,0,0,6,0l96-56a6,6,0,0,0-6-10.36ZM26,80a6,6,0,0,1,3-5.18l96-56a6,6,0,0,1,6,0l96,56a6,6,0,0,1,0,10.36l-96,56a6,6,0,0,1-6,0l-96-56A6,6,0,0,1,26,80Zm17.91,0L128,129.05,212.09,80,128,31ZM141,217.48l-13,7.57L35,170.82a6,6,0,0,0-6,10.36l96,56a6,6,0,0,0,6,0l16-9.33a6,6,0,0,0-6-10.37Z"></path>
+                </svg>
+                <span>Explore more from categories</span>
+            </div>
+
+        </div>
+
+        <div class="hutch-categories-container">
+            @foreach (var categories in Model.Categories)
+             {
+
+                var base64 = Convert.ToBase64String(categories.c_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+
+                <div class="category-card">
+                    <a href="@Url.Action("FilterByCategory", "Home", new {category = categories.c_name})">
+                        <img src="@imagesrc" alt="@categories.c_name"/>
+                    </a>
+                </div>
+             }
+
+        </div>
+
+    </div>
+
+    
+
+    <div class="hutch-top-products">
+
+        <h4>Top Selling Products</h4>
+
+        <div class="hutch-top-products-container">
+            @foreach (var topProduct in Model.TopSellingProducts)
+            {
+                var base64 = Convert.ToBase64String(topProduct.p_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+
+                <div class="top-product-card">
+
+                    <div class="not-allowable-product-modal @(topProduct.p_qty <= 0 || topProduct.p_availability == "unavailable" ? "display-block" : "")"></div>
+
+                    <div>
+                        <img src="@imagesrc" alt="@topProduct.p_name"/>
+                        <div class="product-details">
+
+                            @if (topProduct.p_name.Length > 15)
+                            {
+                                <h5>@topProduct.p_name.Substring(0, 12)...</h5>
+                            }
+                            else
+                            {
+                                <h5>@topProduct.p_name</h5>
+                            }
+
+                            <div class="product-card-footer">
+                                <h6>@topProduct.p_price</h6>
+
+                                @if (topProduct.p_qty > 0 && topProduct.p_availability != "unavailable")
+                                {
+                                    <a href="@Url.Action("Details", "Product", new {pid = topProduct.pid})" class="add-to-cart-btn">Add</a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+                    @if (topProduct.p_availability == "unavailable")
+                    {
+                        <h6 class="item-additional-text">Unavailable</h6>
+                    }
+                    else
+                    {
+                        if (topProduct.p_qty <= 0)
+                        {
+                            <h6 class="item-additional-text">Out of stock</h6>
+                        }
+                        else if (topProduct.p_qty < 5)
+                        {
+                            <h6 class="item-additional-text">Few items left</h6>
+                        }
+                    }
+
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+    <div class="other-stores">
+        <div class="grocery-store">
+            <img src="~/Content/Assets/Index/GroceryStore.jpg" alt="grocery-store"/>
+        </div>
+        <div class="book-store">
+            <img src="~/Content/Assets/Index/BookStore.jpg" alt="book-store"/>
+        </div>
+    </div>
+
+    <div class="hutch-new-arrivals">
+        <h4>New Arrivals</h4>
+
+        <div class="hutch-new-arrivals-container">
+            @foreach (var newArrival in Model.NewArrivals)
+            {
+                var base64 = Convert.ToBase64String(newArrival.p_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+
+                <div class="new-arrival-product-card">
+
+                    <div class="not-allowable-product-modal @(newArrival.p_qty <= 0 || newArrival.p_availability == "unavailable" ? "display-block" : "")"></div>
+
+                    <div>
+                        <img src="@imagesrc" alt="@newArrival.p_name"/>
+                        <div class="new-arrival-product-details">
+                            @if (newArrival.p_name.Length > 15)
+                            {
+                                <h5>@newArrival.p_name.Substring(0, 12)...</h5>
+                            }
+                            else
+                            {
+                                <h5>@newArrival.p_name</h5>
+                            }
+                            <div class="new-arrival-product-footer">
+                                <h6>@newArrival.p_price</h6>
+
+                                @if (newArrival.p_qty > 0 && newArrival.p_availability != "unavailable")
+                                {
+                                    <a href="@Url.Action("Details", "Product", new {pid = newArrival.pid})" class="add-to-cart-btn">Add</a>
+                                }
+
+                            </div>
+                        </div>
+                    </div>
+
+                    @if (newArrival.p_availability == "unavailable")
+                    {
+                        <h6 class="item-additional-text">Unavailable</h6>
+                    }
+                    else
+                    {
+                        if (newArrival.p_qty <= 0)
+                        {
+                            <h6 class="item-additional-text">Out of stock</h6>
+                        }
+                        else if (newArrival.p_qty < 5)
+                        {
+                            <h6 class="item-additional-text">Few items left</h6>
+                        }
+                    }
+
+                </div>
+            }
+
+        </div>
+    </div>
+
+</main>

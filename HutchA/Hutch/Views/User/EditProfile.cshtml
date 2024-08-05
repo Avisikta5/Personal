@@ -1,0 +1,108 @@
+﻿@model Hutch.Models.User
+
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Styles/User/EditProfile.css" rel="stylesheet" />
+
+<div class="user-edit-profile">
+
+    <div class="bar-green"></div>
+    <div class="bar-purple"></div>
+
+    <div class="user-edit-profile-container">
+
+        <div class="hutch-terms">
+            <div class="hutch-edit-profile-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     width="130" height="30" viewBox="50 100 240 50"
+                     preserveAspectRatio="xMidYMid meet" color-interpolation-filters="sRGB">
+                    <g data-v-0dd9719b="" fill="#18130d" class="iconlinesvg-g iconlinesvg" transform="translate(86.8103609085083,102.74509048461914)"><g class="tp-name"><g transform="translate(0, 0)"><g data-gra="path-name" fill="#18130d" transform="scale(1)"><path d="M30.19-41.48L38.51-41.48L38.51 0L30.19 0L30.19-17.65L12.42-17.65L12.42 0L4.10 0L4.10-41.48L12.42-41.48L12.42-24.42L30.19-24.42L30.19-41.48Z" transform="translate(-4.100363156157147, 43.97490921096072)"></path></g></g><g transform="translate(38, 2.2523247669406885)"><g><g class="imagesvg"><g><rect fill="#18130d" fill-opacity="0" stroke-width="2" x="0" y="0" width="35.928170967333386" height="40.00508965396941" class="image-rect"></rect> <svg x="0" y="0" width="35.928170967333386" height="40.00508965396941" filtersec="colorsb6614549201" class="image-svg-svg primary" style="overflow: visible;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3.197441294480914e-14 113.06000518798828 125.88999938964844"><title>U</title><g id="fd6016d2-c96e-426b-8ec6-be844d19d81e" data-name="圖層 2"><g id="603d6c58-417f-4c92-adc4-633165d5b8eb" data-name="栝鍣 1"><path d="M108.56,0H69.84a4.5,4.5,0,0,0-4.5,4.5V87.1H47.72V4.5A4.5,4.5,0,0,0,43.22,0H4.5A4.5,4.5,0,0,0,0,4.5v87s0,0,0,0v0c0,.11,0,.21,0,.32s0,.1,0,.15A4.5,4.5,0,0,0,2.3,95.53L40.47,125a4.48,4.48,0,0,0,.63.41l.18.08a4.51,4.51,0,0,0,.5.21l.31.08c.13,0,.26.08.4.1a4.51,4.51,0,0,0,.6,0h65.47a4.5,4.5,0,0,0,4.5-4.5V4.5A4.5,4.5,0,0,0,108.56,0ZM65.34,116.94H44.75l-27-20.84H65.34ZM38.72,9V87.1H9V9Zm65.34,107.94H74.34V9h29.72Z" fill="#18130d"></path></g></g></svg></svg> <!----></g></g></g></g><g transform="translate(77, 0)"><g data-gra="path-name" fill="#18130d" transform="scale(1)"><path d="M21.16-26.09L13.79-26.09L13.79-10.16Q13.79-8.50 14.59-7.76Q15.39-7.01 17.29-7.01L17.29-7.01L21.16-7.01L21.16 0L15.93 0Q5.41 0 5.41-10.22L5.41-10.22L5.41-26.09L1.49-26.09L1.49-32.92L5.41-32.92L5.41-41.06L13.79-41.06L13.79-32.92L21.16-32.92L21.16-26.09Z" transform="translate(-1.4856388246946188, 43.97490921096072)"></path></g></g><g transform="translate(100, 0)"><g data-gra="path-name" fill="#18130d" transform="scale(1)"><path d="M1.96-16.46Q1.96-21.57 4.04-25.40Q6.12-29.24 9.81-31.35Q13.49-33.46 18.24-33.46L18.24-33.46Q24.36-33.46 28.38-30.40Q32.39-27.34 33.75-21.81L33.75-21.81L24.78-21.81Q24.07-23.95 22.37-25.17Q20.68-26.38 18.18-26.38L18.18-26.38Q14.62-26.38 12.54-23.80Q10.46-21.21 10.46-16.46L10.46-16.46Q10.46-11.77 12.54-9.18Q14.62-6.60 18.18-6.60L18.18-6.60Q23.24-6.60 24.78-11.11L24.78-11.11L33.75-11.11Q32.39-5.76 28.35-2.61Q24.31 0.53 18.24 0.53L18.24 0.53Q13.49 0.53 9.81-1.57Q6.12-3.68 4.04-7.52Q1.96-11.35 1.96-16.46L1.96-16.46Z" transform="translate(-1.961043248596897, 43.97490921096072)"></path></g></g><g transform="translate(135, 0)"><g data-gra="path-name" fill="#18130d" transform="scale(1)"><path d="M22.64-33.40Q26.38-33.40 29.30-31.76Q32.21-30.13 33.84-26.95Q35.48-23.77 35.48-19.31L35.48-19.31L35.48 0L27.16 0L27.16-18.18Q27.16-22.11 25.20-24.22Q23.24-26.33 19.85-26.33L19.85-26.33Q16.40-26.33 14.41-24.22Q12.42-22.11 12.42-18.18L12.42-18.18L12.42 0L4.10 0L4.10-43.97L12.42-43.97L12.42-28.82Q14.02-30.96 16.70-32.18Q19.37-33.40 22.64-33.40L22.64-33.40Z" transform="translate(-4.100363156157148, 43.97490921096072)"></path></g></g></g> <!----></g>
+                    <defs v-gra="od"></defs>
+                </svg>
+            </div>
+
+            <div class="terms-container">
+                <ul>
+
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#228B22" viewBox="0 0 256 256">
+                            <path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path>
+                        </svg>
+                        <div class="term">
+                            <h5>Get your orders delivered</h5>
+                            <p>We ship orders within USA only, please provide a address inside united states</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#228B22" viewBox="0 0 256 256">
+                            <path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path>
+                        </svg>
+                        <div class="term">
+                            <h5>Provide authenticated phone number</h5>
+                            <p>Provided phone number will be used to contact with the customer</p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#228B22" viewBox="0 0 256 256">
+                            <path d="M141.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L124.69,128,50.34,53.66A8,8,0,0,1,61.66,42.34l80,80A8,8,0,0,1,141.66,133.66Zm80-11.32-80-80a8,8,0,0,0-11.32,11.32L204.69,128l-74.35,74.34a8,8,0,0,0,11.32,11.32l80-80A8,8,0,0,0,221.66,122.34Z"></path>
+                        </svg>
+                        <div class="term">
+                            <h5>Eco-friendly package</h5>
+                            <p>We keep the concern about the environment, so we come with pure eco-friendly packaging</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="edit-profile-form">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal form-container">
+                    <h4>Edit your Hutch account</h4>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.email)
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.password)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.name, htmlAttributes: new { })
+                        <div class="">
+                            @Html.EditorFor(model => model.name, new { htmlAttributes = new { } })
+                            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.address, htmlAttributes: new { })
+                        <div class="">
+                            @Html.EditorFor(model => model.address, new { htmlAttributes = new { } })
+                            @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.phone_no, htmlAttributes: new { })
+                        <div class="">
+                            @Html.EditorFor(model => model.phone_no, new { htmlAttributes = new { } })
+                            @Html.ValidationMessageFor(model => model.phone_no, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <button class="edit-form-submit-btn" type="submit">Edit account</button>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div>

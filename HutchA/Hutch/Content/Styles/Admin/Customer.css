@@ -1,0 +1,75 @@
+﻿.admin-all-users-container{
+    height: calc(100vh - 4.5rem);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
+}
+
+.admin-all-users-container .all-users {
+    width: 90%;
+    max-width: 70.25rem;
+    height: 80%;
+    background: rgb(247, 250, 252);
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-radius: 0.3rem;
+}
+
+.admin-all-users-container .user-card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.8rem;
+    grid-auto-flow: dense;
+}
+
+.admin-all-users-container .user-card{
+    height: max-content;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.3);
+}
+
+
+.admin-all-users-container .user-card .user-details{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.admin-all-users-container .user-card .user-details h5{
+    font-size: 1rem;
+}
+
+.admin-all-users-container .user-card .user-details h6{
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-wrap: wrap;
+    initial-letter-wrap: all;
+    margin-top: 0.3rem;
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 1025px) {
+    .admin-all-users-container .all-users {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 870px){
+    .admin-all-users-container .all-users{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .admin-all-users-container .all-users {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ce6ae41d05854969998f40035248f812" Name="Diagram1">
+        <EntityTypeShape EntityType="HutchModel.Admin" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Cart" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Category" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Feedback" Width="1.5" PointX="6" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Invoice" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.OrderItem" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Product" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.sysdiagram" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.TransactionHistory" Width="1.5" PointX="6" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.User" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HutchModel.Wishlist" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <AssociationConnector Association="HutchModel.FK_Cart_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_Cart_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_Feedback_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_Feedback_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_OrderItem_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_TransactionHistory_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_OrderItem_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_OrderItem_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_Wishlist_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_TransactionHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="HutchModel.FK_Wishlist_User" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

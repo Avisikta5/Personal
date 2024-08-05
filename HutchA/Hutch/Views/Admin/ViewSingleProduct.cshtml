@@ -1,0 +1,34 @@
+﻿@model Hutch.Models.Product
+
+@{
+    ViewBag.Title = "ViewSingleProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/ViewSingleProduct.css" rel="stylesheet" />
+
+
+<main class="single-product">
+    <div class="single-product-conatainer">
+        <div class="single-product-image">
+            @{
+                var base64 = Convert.ToBase64String(Model.p_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+            }
+            <img src="@imagesrc" alt="@Model.p_name" />
+        </div>
+
+        <div class="single-product-details">
+            <h4>@Model.p_name</h4>
+            <span>$@Model.p_price</span>
+            <div class="single-product-desc">
+                <h6>Details</h6>
+                <p>
+                    @Model.p_desc
+                </p>
+                <h6>Brand: <span>@Model.p_brand</span></h6>
+                <h6>Category: <span>@Model.p_category</span></h6>
+            </div>
+
+        </div>
+    </div>
+</main>

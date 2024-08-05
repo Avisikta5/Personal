@@ -1,0 +1,5 @@
+﻿.admin-dashboard-main-container{
+    height: calc(100vh - 4.5rem);
+    margin-top: 1rem;
+    margin-left: 14rem;
+}

@@ -1,0 +1,49 @@
+﻿@model Hutch.ViewModels.WishlistViewModel
+@{
+    ViewBag.Title = "AllWishlist";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Styles/User/AllWishlist.css" rel="stylesheet" />
+
+
+<main class="wishlist">
+    <h3>My Wishlist</h3>
+    <p class="total-items-count">@Model.totalItems ITEMS</p>
+
+    <div class="wishlist-container">
+        @foreach (var item in Model.wishlists)
+        {
+            var base64 = Convert.ToBase64String(item.p_image);
+            var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+
+            <div class="wishlist-item-card">
+
+                <a href="@Url.Action("Details", "Product", new {pid = item.pid})">
+
+                    <form class="wishlist-icon-link" method="post" action="@Url.Action("HandleWishlist", "Product")">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="email" value="@Session["u_email"]" />
+                        <input type="hidden" name="pid" value="@item.pid" />
+                        <button type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="#ff3131">
+                                <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="wishlist-item-image">
+                        <img src="@imagesrc" alt="@item.p_name"/>
+                    </div>
+                    <div class="wishlist-item-details">
+                        <h6>@item.p_name</h6>
+                        <span>@item.p_price</span>
+                    </div>
+
+                </a>
+                
+            </div>
+        }
+
+    </div>
+</main>
+

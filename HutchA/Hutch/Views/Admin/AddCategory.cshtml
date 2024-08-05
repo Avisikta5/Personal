@@ -1,0 +1,67 @@
+﻿@model Hutch.Models.Category
+
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/AddCategory.css" rel="stylesheet" />
+
+
+<main class="admin-add-category">
+    <div class="admin-add-category-container">
+
+        <div class="admin-add-category-form">
+            @using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal form-container">
+
+                    <div class="form-left-container">
+
+                        <h4>Add a new category</h4>
+
+                        <span class="admin-add-category-alert">@ViewBag.Message</span>
+
+                        <div class="category-name">
+                            @Html.LabelFor(model => model.c_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.EditorFor(model => model.c_name, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.c_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="category-id">
+                            @Html.LabelFor(model => model.cid, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.EditorFor(model => model.cid, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.cid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-right-container">
+
+                        <div class="category-image">
+
+                            <div class="image-preview-container">
+                                <img id="image-preview" class="image-preview" />
+                            </div>
+
+                            @Html.LabelFor(model => model.c_image, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                <input type="file" id="category-image-upload" name="image" onchange="previewCategoryImage()" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <button class="add-category-btn" type="submit">Add category</button>
+            }
+        </div>
+
+    </div>
+
+</main>

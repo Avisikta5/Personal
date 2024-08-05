@@ -1,0 +1,61 @@
+﻿@model Hutch.Models.Admin
+
+@{
+    Layout = null;
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+<link href="~/Content/Styles/Reset.css" rel="stylesheet" />
+<link href="~/Content/Styles/Shared.css" rel="stylesheet" />
+<link href="~/Content/Styles/Admin/Login.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+    <div class="hutch-admin-login-container">
+        <div class="admin-login-form-container">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-header">
+                    <h4>Log in</h4>
+                </div>
+
+                <div class="form-horizontal admin-login-container">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.a_email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.a_email, new { htmlAttributes = new { @class = "form-control", placeholder="Email address" } })
+                            @Html.ValidationMessageFor(model => model.a_email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.a_password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.a_password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                            @Html.ValidationMessageFor(model => model.a_password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <button type="submit" class="admin-login-submit-btn">Log in</button>
+                </div>
+            }
+        </div>
+    </div>
+
+</body>
+</html>

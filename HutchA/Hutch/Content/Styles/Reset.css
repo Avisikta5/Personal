@@ -1,0 +1,10 @@
+﻿body{
+    margin: 0;
+}
+
+.body-content{
+    margin: 0;
+    padding: 0;
+    max-width: unset;
+    min-height: calc(100vh - 3.875rem);
+}

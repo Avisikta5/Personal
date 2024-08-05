@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Hutch.Models.Category>
+
+@{
+    ViewBag.Title = "RemoveCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/RemoveCategory.css" rel="stylesheet" />
+
+<main class="admin-remove-categories-container">
+
+    <div class="remove-categories">
+
+        <div class="category-card-container">
+            @foreach (var category in Model)
+            {
+                var base64 = Convert.ToBase64String(category.c_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+                <div class="category-card">
+
+                    <div>
+                        <img src="@imagesrc" />
+                    </div>
+
+                    <div class="category-details">
+                        <h6>@category.c_name</h6>
+
+                        <a href="@Url.Action("DeleteCategory" , "Admin", new {id = category.cid})">
+                            Delete
+                        </a>
+                    </div>
+
+                </div>
+            }
+        </div>
+        
+    </div>
+</main>

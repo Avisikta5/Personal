@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Hutch.Models.Category>
+
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/UpdateCategory.css" rel="stylesheet" />
+
+<main class="admin-update-categories-container">
+
+    <div class="update-categories">
+        <div class="category-card-container">
+            @foreach (var category in Model)
+            {
+                var base64 = Convert.ToBase64String(category.c_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+                <div class="category-card">
+
+                    <div>
+                        <img src="@imagesrc" alt="@category.c_name"/>
+                    </div>
+
+                    <div class="category-details">
+                        <h6>@category.c_name</h6>
+
+                        <a href="@Url.Action("EditCategory" , "Admin", new {id = category.cid})">
+                            Edit
+                        </a>
+                    </div>
+
+                </div>
+            }
+        </div>
+       
+    </div>
+</main>

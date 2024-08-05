@@ -1,0 +1,97 @@
+﻿.admin-update-categories-container{
+    height: calc(100vh - 4.5rem);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
+}
+
+.admin-update-categories-container .update-categories {
+    width: 95%;
+    max-width: 70.25rem;
+    height: 80%;
+    background:rgb(247, 250, 252);
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-radius: 0.3rem;
+}
+
+.admin-update-categories-container .category-card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1rem;
+}
+
+.admin-update-categories-container .category-card{
+    height: max-content;
+    background: #fff;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.admin-update-categories-container .category-card img{
+    height: 9.77rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.admin-update-categories-container .category-card .category-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.admin-update-categories-container .category-card .category-details h6{
+    font-size: 0.9rem;
+}
+
+.admin-update-categories-container .category-card .category-details a{
+    background: #212529;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #fff;
+    text-wrap: nowrap;
+    padding: 0.3rem 1rem;
+    border-radius: 0.3rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 870px) {
+    .admin-update-categories-container .update-categories {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 521px) {
+    .admin-update-categories-container {
+        padding: 0 0.5rem;
+    }
+
+    .admin-update-categories-container .update-categories {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .admin-update-categories-container .update-categories {
+        width: 98%;   
+    }
+
+    .admin-update-categories-container .category-card img {
+        height: 10.77rem;   
+    }
+}
+
+@media screen and (max-width: 521px) {
+  
+    .admin-update-categories-container .update-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-update-categories-container .category-card img {
+        height: 9.77rem;   
+    }
+}

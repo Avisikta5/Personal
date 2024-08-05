@@ -1,0 +1,105 @@
+﻿.admin-all-products-container{
+    height: calc(100vh - 4.5rem);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
+}
+
+.admin-all-products-container .all-products {
+    max-width: 63.25rem;
+    height: 80%;
+    background: rgb(247, 250, 252);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    border-radius: 0.3rem;
+}
+
+.admin-all-products-container .product-card{
+    background: #fff;
+    display: flex;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+}
+
+
+
+.admin-all-products-container .product-card img{
+    width: 124px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.admin-all-products-container .product-card .product-details{
+    width: 100%;
+    position: relative;
+}
+
+.admin-all-products-container .product-card .product-trending-text{
+    position: absolute;
+    font-size: 0.9rem;
+    font-weight: 500;
+    bottom: 0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.admin-all-products-container .product-card .product-additional-text{
+    position: absolute;
+    font-size: 0.8rem;
+    color: red;
+    bottom: 0.1rem;
+    right: 0.3rem;
+}
+
+.admin-all-products-container .product-card .product-details .product-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.admin-all-products-container .product-card h6{
+    font-size: 0.9rem;
+}
+
+.admin-all-products-container .product-card .product-details p{
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 870px){
+    .admin-all-products-container .all-products{
+        grid-template-columns: 1fr;
+    }
+
+    .admin-all-products-container .product-card img {
+        width: 100px;
+    }
+
+    .admin-all-products-container .product-card h6 {
+        font-size: 0.8rem;
+    }
+
+    .admin-all-products-container .product-card .product-details p {
+        font-size: 0.8rem;
+    }
+
+    .admin-all-products-container .product-card span {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 431px) {
+
+    .admin-all-products-container .product-card .product-details p {
+        font-size: 0.78rem;
+    }
+}

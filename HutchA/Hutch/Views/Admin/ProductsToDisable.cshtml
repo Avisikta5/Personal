@@ -1,0 +1,56 @@
+﻿@model List<Hutch.Models.Product>
+
+@{
+    ViewBag.Title = "ProductsToDisable";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/Styles/Admin/ProductsToDisable.css" rel="stylesheet" />
+
+<main class="admin-all-products-to-disable-container">
+
+    @if (ViewBag.Message != null)
+    {
+        <h6>@ViewBag.Message</h6>
+    }
+
+    else
+    {
+        <div class="all-products-to-disable">
+            @foreach (var product in Model)
+            {
+                var base64 = Convert.ToBase64String(product.p_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+                <div class="product-card">
+                    <div>
+                        <img src="@imagesrc" />
+                    </div>
+                    <div class="product-details">
+
+                        <div class="product-name">
+                            <h6>@product.p_name</h6>
+
+                            <a href="@Url.Action("DisableTheProduct" , "Admin", new {pid = product.pid})">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#000000" viewBox="0 0 256 256">
+                                    <path d="M86,152v48a6,6,0,0,1-12,0V152a6,6,0,0,1,12,0ZM40,186a6,6,0,0,0-6,6v8a6,6,0,0,0,12,0v-8A6,6,0,0,0,40,186Zm172.44,26L52.44,36A6,6,0,0,0,43.56,44L114,121.52V200a6,6,0,0,0,12,0V134.72l28,30.8V200a6,6,0,0,0,12,0V178.72L203.56,220a6,6,0,0,0,8.88-8.08ZM160,121.63a6,6,0,0,0,6-6V72a6,6,0,0,0-12,0v43.63A6,6,0,0,0,160,121.63Zm40,44a6,6,0,0,0,6-6V32a6,6,0,0,0-12,0V159.63A6,6,0,0,0,200,165.63Z"></path>
+                                </svg>
+                            </a>
+                        </div>
+
+                        @if (product.p_desc.Length > 183)
+                        {
+                            <p>@product.p_desc.Substring(0, 181)...</p>
+                        }
+                        else
+                        {
+                            <p>@product.p_desc</p>
+                        }
+
+                    <span>&#8377 @product.p_price</span>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+</main>

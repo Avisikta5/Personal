@@ -1,0 +1,55 @@
+﻿*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    outline: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    display: block;
+    cursor: pointer;
+}
+
+a:hover{
+    color: unset;
+}
+
+button{
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+label{
+    display: block;
+}
+
+input{
+    background: none;
+    border: none;
+    max-width: unset;
+}
+
+svg{
+    display: block;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p, span{
+    margin-bottom: 0;
+}

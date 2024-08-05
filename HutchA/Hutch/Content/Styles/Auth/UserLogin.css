@@ -1,0 +1,102 @@
+﻿.hutch-login-conatainer{
+    width: 100%;
+    height: 100vh;
+    background: #f1f0ee;
+    font-family: 'Roboto';
+}
+
+
+.hutch-login-conatainer .hutch-login-logo{
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.hutch-login-conatainer .login-wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.hutch-login-conatainer .login-form-container .form-header{
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hutch-login-conatainer .login-form-container{
+    width: 50vw;
+    max-width: 29.5rem;
+    min-width: 20rem;
+    background: #fff;
+    position: relative;
+    padding: 2rem;
+    border-radius: 0.8rem;
+}
+
+.hutch-login-conatainer .login-form-container .error-message{
+    font-weight: 500;
+    color: #ff3131;
+    font-weight: 400;
+    position: absolute;
+    top: 2.3rem;
+    right: 2rem;
+}
+
+.hutch-login-conatainer .login-form-container form label{
+    margin-bottom: 0.5rem;
+}
+
+.hutch-login-conatainer .login-form-container form input{
+    width: 100%;
+    height: 2.5rem;
+    background: #f1f0ee;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.hutch-login-conatainer .login-form-container form input::placeholder{
+    color: rgba(128, 128, 128, 0.9);
+}
+
+.hutch-login-conatainer .login-form-container .form-horizontal{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hutch-login-conatainer .form-horizontal .login-submit-btn{
+    background: #212529;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.7rem 0;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.hutch-login-conatainer .login-form-container .login-form-footer{
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.hutch-login-conatainer .login-form-container .forget-password a{
+    display: inline;
+    font-size: 0.9rem;
+    transition: all 100ms linear;
+}
+
+.hutch-login-conatainer .login-form-container .forget-password a:hover{
+    text-decoration: underline;
+}
+
+.hutch-login-conatainer .login-form-container .login-signup-link{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hutch-login-conatainer .login-form-container .login-signup-link a{
+    padding: 0.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 0.3rem;
+}

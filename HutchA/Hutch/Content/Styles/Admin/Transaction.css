@@ -1,0 +1,82 @@
+﻿.admin-all-transaction-container{
+    height: calc(100vh - 4.5rem);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
+}
+
+.admin-all-transaction-container .all-transaction {
+    width: 90%;
+    max-width: 70.25rem;
+    height: 80%;
+    background: rgb(247, 250, 252);
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    border-radius: 0.3rem;
+}
+
+.admin-all-transaction-container .transaction-card-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+}
+
+.admin-all-transaction-container .transaction-card{
+    height: max-content;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.3);
+}
+
+
+.admin-all-transaction-container .transaction-card .transaction-details{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.admin-all-transaction-container .transaction-card .transaction-details h5{
+    font-size: 0.9rem;
+}
+
+.admin-all-transaction-container .transaction-card .transaction-details h6{
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-wrap: wrap;
+    initial-letter-wrap: all;
+    margin-top: 0.3rem;
+}
+
+
+.admin-all-transaction-container .transaction-card .transaction-details span{
+    font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1025px) {
+    .admin-all-transaction-container .all-transaction {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+
+@media screen and (max-width: 870px){
+    .admin-all-transaction-container .all-transaction{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .admin-all-transaction-container .all-transaction {
+        width: 98%;
+    }
+
+    .admin-all-transaction-container .all-transaction {
+        grid-template-columns: 1fr;
+    }
+}

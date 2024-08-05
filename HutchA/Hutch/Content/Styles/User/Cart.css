@@ -1,0 +1,214 @@
+﻿/* Empty Cart */
+
+.empty-cart{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-top: 3rem;
+}
+
+.empty-cart h3{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.empty-cart .empty-cart-image{
+    width: 10rem;
+}
+
+.empty-cart .wishlist-btn{
+    background: #005fff;
+    color: #fff;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+}
+
+/* Cart */
+.cart{
+    padding: 0 4rem;
+    padding-top: 2rem;
+}
+
+.cart .cart-user-name{
+    background: #eceff1;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding: 1rem 0.5rem;
+    position: relative;
+}
+
+.cart .cart-user-name::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background: #eceff1;
+    transform: translateY(-50%) rotate(45deg);
+    left: 3rem;
+    bottom: -1rem;
+}
+
+.cart > h2{
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.cart .userErrorDetails{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cart .userErrorDetails a{
+   background: #212529;
+   font-size: 0.9rem;
+   color: #fff;
+   font-weight: 500;
+   padding: 0.5rem 0.8rem;
+}
+
+.cart .cart-details h4{
+    margin-top: 0.5rem;
+    font-size: 0.98rem;
+}
+
+.cart .cart-and-order{
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1rem;
+}
+
+.cart .cart-item-container{
+    height: 26.375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.cart .cart-item-card{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.3rem;
+    position: relative;
+    padding: 0.3rem;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+.cart .cart-item-card .cart-item-remove{
+    font-size: 0.9rem;
+    color: #ff3131;
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.5rem;
+}
+
+.cart .cart-item-card .cart-item-image{
+    width: 124px;
+    height: 124px;
+}
+
+.cart .cart-item-card .cart-item-details h5{
+    font-size: 1rem;
+}
+
+.cart .cart-item-card .cart-item-quantity{
+    background: #eceff1;
+    width: min-content;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.cart .cart-item-card .item-quantity-warning{
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ff3131;
+}
+
+.cart .cart-item-card .cart-item-quantity a{
+    padding: 0.5rem;
+}
+
+.cart .order-summary-container{
+    justify-self: center;
+}
+
+.cart .order-summary-container .order-details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-block: 1.5rem;
+}
+
+.cart .order-summary-container .order-items,
+.cart .order-summary-container .order-delivery,
+.cart .order-summary-container .order-total-amount{
+    width: 18rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart .order-summary-container .order-total-amount span:nth-child(1){
+    font-weight: 500;
+}
+
+.cart .order-details h6{
+    color: rgba(128, 128, 128, 0.5);
+}
+
+.cart .order-summary-container > span{
+    font-weight: 500;
+}
+
+.cart .order-summary-container > a{
+    background: #212529;
+    text-align: center;
+    color: #fff;
+    padding: 0.3rem;
+    margin-top: 1rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 854px){
+    .cart{
+        padding: 1rem 1rem;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .cart .cart-and-order {
+        grid-template-columns: 1fr;
+    }
+
+    .cart .order-summary-container {
+        justify-self: flex-start;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .cart {
+        padding: 1rem 0.5rem;
+    }
+
+    .cart .cart-item-container{
+        height: 20rem;
+    }
+
+    .cart .order-summary-container {
+        width: 100%;
+        justify-self: center;
+    }
+
+    .cart .order-summary-container .order-items,
+    .cart .order-summary-container .order-delivery,
+    .cart .order-summary-container .order-total-amount{
+        width: 100%;
+    }
+}

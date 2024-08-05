@@ -1,0 +1,62 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+    border: none;
+}
+
+a{
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #fff;
+}
+
+label{
+    width: unset;
+    max-width: unset;
+}
+
+input{
+    width: unset;
+    border: none;
+    background: none;
+    max-width: unset;
+}
+
+textarea{
+    max-width: unset;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+body img{
+    display: block;
+    width: 100%;
+}
+
+svg{
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto";
+    background: rgb(247, 250, 252);
+}

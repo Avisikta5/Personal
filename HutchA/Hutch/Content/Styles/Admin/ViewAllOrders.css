@@ -1,0 +1,134 @@
+﻿.admin-all-orders-container{
+    height: calc(100vh - 4.5rem);
+    background: #fff;
+    display: grid;
+    place-items: center;
+    padding: 0 1rem;
+}
+
+.admin-all-orders-container .all-orders {
+    width: 100%;
+    max-width: 73.25rem;
+    height: 80%;
+    background: rgb(247, 250, 252);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    border-radius: 0.3rem;
+}
+
+.admin-all-orders-container .order-card{
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    position: relative;
+}
+
+.admin-all-orders-container .order-card img{
+    width: 124px;
+    aspect-ratio: 1/1.2;
+    object-fit: cover;
+}
+
+.admin-all-orders-container .order-card .order-card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.8rem;
+}
+
+.admin-all-orders-container .order-card h6{
+    font-size: 0.85rem;
+}
+
+.admin-all-orders-container .order-card span{
+    font-size: 0.8rem;
+}
+
+.admin-all-orders-container .order-card .order-buyer{
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.admin-all-orders-container .order-card .order-access-btn{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.admin-all-orders-container .order-card .order-access-btn a{
+    font-size: 0.9rem;
+    color: #ffffff;
+    border-radius: 0.3rem;
+    padding: 0.3rem 0.5rem;
+}
+
+.admin-all-orders-container .order-card .order-access-btn .order-out-btn{
+    background: #2c6fbb;
+}
+
+.admin-all-orders-container .order-card .order-access-btn .order-delivered-btn{
+    background: #39ad48;
+}
+
+.admin-all-orders-container .order-card .order-access-btn .order-cancel-btn{
+    background: #FF5733;
+}
+
+/* Toggle Classe */
+.displayNone{
+    display: none;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 870px) {
+   
+    .admin-all-orders-container .order-card img {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .admin-all-orders-container .all-orders{
+        grid-template-columns: 1fr;
+    }
+
+    .admin-all-orders-container .order-card img {
+        width: 100px;
+    }
+
+    .admin-all-orders-container .order-card h6 {
+        font-size: 0.8rem;
+    }
+
+    .admin-all-orders-container .order-card span {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 430px){
+
+    .admin-all-orders-container .order-card img {
+        width: 80px;
+    }
+
+    .admin-all-orders-container .order-card h6 {
+        font-size: 0.8rem;
+    }
+
+ 
+    .admin-all-orders-container .order-card span {
+        font-size: 0.8rem;
+    }
+
+    .admin-all-orders-container .order-card .order-access-btn button {
+        font-size: 0.8rem;
+    }
+}

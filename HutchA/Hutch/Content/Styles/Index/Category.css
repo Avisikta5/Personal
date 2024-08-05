@@ -1,0 +1,99 @@
+﻿.main .hutch-categories-wrapper{
+    background: #f0f0f0;
+    display: grid;
+    grid-template-columns: auto 1.5fr;
+    gap: 2rem;
+    padding: 3.5rem 3rem;
+    margin-top: 1.5rem;
+}
+
+.main .hutch-categories-wrapper .about-hutch-categories{
+    width: 18rem;
+}
+
+
+.main .hutch-categories-wrapper .about-hutch-categories h3 {
+    font-size: 1.2rem;
+}
+.main .hutch-categories-wrapper .about-hutch-categories p {
+    font-size: 1rem;
+    color: rgba(128, 128, 128, 0.9);
+    font-weight: 400;
+    margin-top: 1rem;
+}
+
+.main .hutch-categories-wrapper .dummy-category-link {
+    width: max-content;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+    border-radius: 1rem;
+    padding: 0.5rem 0.8rem;
+    margin-top: 0.8rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.main .hutch-categories-wrapper .dummy-category-link span{
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.main .hutch-categories-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    scrollbar-width: none;
+}
+
+.main .hutch-categories-container .category-card{
+    height: 10rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.main .hutch-categories-container .category-card a{
+    height: 100%;
+}
+
+.main .hutch-categories-container .category-card img{
+    object-fit: cover;
+}
+
+/* Media Quries */
+@media screen and (max-width: 1025px){
+    .main .hutch-categories-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 854px) {
+    .main .hutch-categories-wrapper {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width:431px) {
+    .main .hutch-categories-wrapper {
+        padding: 1rem;
+    }
+
+    .main .hutch-categories-container {
+        display: flex;
+        gap: 0.5rem;
+        overflow-x: scroll;
+        scrollbar-width: none;
+        scroll-snap-type: x mandatory;
+    }
+
+    .main .hutch-categories-container .category-card{
+        min-width: 15rem;
+        height: 10rem;
+        border-radius: 0.3rem;
+        overflow: hidden;
+        scroll-snap-align: center;
+    }
+}

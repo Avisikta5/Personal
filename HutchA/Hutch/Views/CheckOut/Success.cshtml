@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Styles/Checkout/Success.css" rel="stylesheet" />
+
+<main class="payment-success">
+
+    <h3>Order confirmation email sent</h3>
+    <div class="payment-success-image">
+        <img src="~/Content/Assets/Utility/hippo-email-sent.png" />
+    </div>
+
+    <a class="keep-shopping-btn" href="@Url.Action("AllWishlist", "User")">Keep shopping</a>
+
+</main>

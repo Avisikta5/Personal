@@ -1,0 +1,72 @@
+﻿@model Hutch.Models.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/EditCategory.css" rel="stylesheet" />
+
+<main class="admin-edit-category">
+    <div class="admin-edit-category-container">
+
+        <div class="admin-edit-category-form">
+            @using (Html.BeginForm("EditCategory", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal form-container">
+
+                    <div class="form-left-container">
+
+                        <h4>edit a new category</h4>
+
+                        <span class="admin-edit-category-alert">@ViewBag.Message</span>
+
+                        <div class="category-name">
+                            @Html.LabelFor(model => model.c_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.EditorFor(model => model.c_name, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.c_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="category-id">
+                            <div class="">
+                                @Html.HiddenFor(model => model.cid, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.cid, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-right-container">
+
+                        <div class="category-image">
+
+                            @{ 
+                                var base64 = Convert.ToBase64String(Model.c_image);
+                                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+                            }
+
+                            <div class="image-preview-container">
+                                <img src="@imagesrc" id="image-preview" class="image-preview" />
+                            </div>
+
+                            <input hidden name="base64" value="@base64"/>
+
+                            @Html.LabelFor(model => model.c_image, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                <input type="file" id="category-image-upload" name="image" onchange="previewCategoryImage()" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <button class="edit-category-btn" type="submit">Edit category</button>
+            }
+        </div>
+
+    </div>
+
+</main>

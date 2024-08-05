@@ -1,0 +1,89 @@
+﻿.hutch-new-arrivals{
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.hutch-new-arrivals h4{
+    margin-bottom: 1rem;
+}
+
+.hutch-new-arrivals .hutch-new-arrivals-container{
+    display: flex;
+    gap: 1rem;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.hutch-new-arrivals .new-arrival-product-card{
+    padding-bottom: 1.8rem;
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+    border-radius: 0.3rem;
+    box-shadow: 1px 1px 5px rgba(128, 128, 128, 0.3);
+}
+
+.hutch-new-arrivals .new-arrival-product-card .not-allowable-product-modal {
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Toggle classes */
+.hutch-new-arrivals .new-arrival-product-card .not-allowable-product-modal.display-block{
+    display: block;
+}
+
+.hutch-new-arrivals .new-arrival-product-card img{
+    width: 8.75rem;
+    aspect-ratio: 1;
+    margin-inline: auto;
+    object-fit: cover;
+}
+
+.hutch-new-arrivals .new-arrival-product-card h5{
+    font-size: 1rem;
+}
+
+.hutch-new-arrivals .new-arrival-product-card .new-arrival-product-details{
+    padding: 0 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.hutch-new-arrivals .new-arrival-product-card .new-arrival-product-details h5{
+    font-size: 0.9rem;
+}
+
+.hutch-new-arrivals .new-arrival-product-card .new-arrival-product-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
+
+.hutch-new-arrivals .new-arrival-product-card  .add-to-cart-btn{
+    font-size: 0.9rem;
+    color: rgb(49, 134, 22);
+    padding: 0.2rem 0.5rem;
+    border: 1px solid rgb(49, 134, 22);
+    border-radius: 0.3rem;
+    transition: all 100ms ease-in-out;
+}
+
+.hutch-new-arrivals .new-arrival-product-card .item-additional-text{
+    font-size: 0.8rem;
+    text-wrap: nowrap;
+    color: #ff3131;
+    position: absolute;
+    left: 50%;
+    bottom: 0.3rem;
+    transform: translateX(-50%);
+}
+
+    .hutch-new-arrivals .new-arrival-product-card .add-to-cart-btn:hover {
+        background: rgb(49, 134, 22);
+        color: #fff;
+    }

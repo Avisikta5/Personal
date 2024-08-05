@@ -1,0 +1,27 @@
+﻿.feedback-success{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feedback-success .feedback-success-image img{
+    width: 15rem;
+}
+
+.feedback-success h3{
+    font-size: 1rem;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 431px){
+    .feedback-success {
+        flex-direction: column;
+        padding-inline: 0.5rem;
+    }
+
+    .feedback-success h3{
+        text-align: center;
+    }
+}

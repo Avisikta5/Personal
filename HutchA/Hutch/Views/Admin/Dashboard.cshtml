@@ -1,0 +1,41 @@
+﻿@model Hutch.ViewModels.AdminIndexViewModel
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/Dashboard.css" rel="stylesheet" />
+
+<main class="admin-index">
+
+    <div class="index-container">
+
+        <div class="user-count-card">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M229.19,213c-15.81-27.32-40.63-46.49-69.47-54.62a70,70,0,1,0-63.44,0C67.44,166.5,42.62,185.67,26.81,213a6,6,0,1,0,10.38,6C56.4,185.81,90.34,166,128,166s71.6,19.81,90.81,53a6,6,0,1,0,10.38-6ZM70,96a58,58,0,1,1,58,58A58.07,58.07,0,0,1,70,96Z"></path>
+                </svg>
+            </div>
+
+            <div class="user-details">
+                <h6>Total users: @Model.userCount</h6>
+            </div>
+        </div>
+
+        <div class="total-revenue-card">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#000000" viewBox="0 0 256 256">
+                    <path d="M24,104H48v64H32a8,8,0,0,0,0,16H224a8,8,0,0,0,0-16H208V104h24a8,8,0,0,0,4.19-14.81l-104-64a8,8,0,0,0-8.38,0l-104,64A8,8,0,0,0,24,104Zm40,0H96v64H64Zm80,0v64H112V104Zm48,64H160V104h32ZM128,41.39,203.74,88H52.26ZM248,208a8,8,0,0,1-8,8H16a8,8,0,0,1,0-16H240A8,8,0,0,1,248,208Z"></path>
+                </svg>
+            </div>
+
+            <div class="revenue-details">
+                <h6>Total revenue: @Model.totalRevenue</h6>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+

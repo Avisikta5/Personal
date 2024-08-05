@@ -1,0 +1,45 @@
+﻿@model Hutch.Models.OTPModel
+
+@{
+    ViewBag.Title = "OTPVerification";
+    Layout = null;
+}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<link href="~/Content/Styles/Reset.css" rel="stylesheet" />
+<link href="~/Content/Styles/Shared.css" rel="stylesheet" />
+<link href="~/Content/Styles/Auth/OTPVerification.css" rel="stylesheet" />
+
+<div class="hutch-otp-container">
+    <div class="otp-form-container">
+        @using (Html.BeginForm("OTPVerification", "Auth", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-header">
+                <h4>Provide the code</h4>
+                <p>Please enter the code sent to your email below to proceed</p>
+            </div>
+
+            <h4>@ViewBag.Message</h4>
+
+            <div class="form-horizontal">
+
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.OTP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.OTP, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.OTP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <input type="submit" value="Create" class="otp-submit-btn" />
+
+            </div>
+        }
+    </div>
+</div>

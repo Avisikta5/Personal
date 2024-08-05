@@ -1,0 +1,128 @@
+﻿@model Hutch.ViewModels.CheckoutViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/modernizr")
+
+<link href="~/Content/Styles/Reset.css" rel="stylesheet" />
+<link href="~/Content/Styles/Shared.css" rel="stylesheet" />
+<link href="~/Content/Styles/Product/Details.css" rel="stylesheet" />
+
+<main class="check-out-container">
+    <div class="product-conatainer">
+        <div class="product-image">
+            @{
+                var base64 = Convert.ToBase64String(Model.CheckoutItem.p_image);
+                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+
+
+            }
+            <img src="@imagesrc" alt="@Model.CheckoutItem.p_name" />
+
+            <button class="single-wishlist-icon-container" data-product-id="@Model.CheckoutItem.pid" type="button">
+
+                @if (Model.isWishlisted)
+                {
+                    <svg class="wishlisted-icon display-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="#ff3131">
+                        <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                    </svg>
+
+                    <svg class="wishlist-icon" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#000000" viewBox="0 0 256 256">
+                        <path d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path>
+                    </svg>
+                }
+                else
+                {
+                    <svg class="wishlisted-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18" height="18" fill="#ff3131">
+                        <path d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z" />
+                    </svg>
+
+                    <svg class="wishlist-icon display-block" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="#000000" viewBox="0 0 256 256">
+                        <path d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"></path>
+                    </svg>
+                }
+
+            </button>
+        </div>
+
+        <div class="product-details">
+            <h4>@Model.CheckoutItem.p_name</h4>
+            <span>&#8377 @Model.CheckoutItem.p_price</span>
+            <div class="product-desc">
+                <h6>Description</h6>
+                <p>
+                    @Model.CheckoutItem.p_desc
+                </p>
+            </div>
+
+            <form action="@Url.Action("HandleCart", "Product")" method="post" class="add-to-cart-form">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="pid" value="@Model.CheckoutItem.pid" />
+                <input type="hidden" name="email" value="@Session["u_email"]" />
+
+                @if (Model.CheckoutItem.p_availability == "unavailable")
+                {
+                    <button type="button" disabled class="unavailable-btn">Currently unavailable</button>
+                }
+                else
+                {
+                    if (Model.CheckoutItem.p_qty > 0)
+                    {
+                        if (Model.isCarted)
+                        {
+                            <button type="submit" @(Session["u_email"] == null ? "disabled" : "") class="add-to-cart-btn">Added to cart</button>
+                        }
+                        else
+                        {
+                            <button type="submit" @(Session["u_email"] == null ? "disabled" : "") class="add-to-cart-btn">Add to cart</button>
+                        }
+                    }
+                    else
+                    {
+                        <button type="button" disabled class="out-of-stock-btn">Out of stock</button>
+                    }
+                }
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="product-feedback-container">
+        <div class="product-feedbacks">
+            <h5>Reviews</h5>
+            <div class="product-review-container">
+
+                @foreach (var feedback in Model.Feedbacks)
+                {
+                    <div class="review-card">
+                        <h6>@feedback.name</h6>
+                        <p>
+                            @feedback.f_message
+                        </p>
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+        @if (Model.isBought)
+        {
+            <div class="product-feedback-form-conatiner">
+                <h5>Leave a review</h5>
+                <form class="feedback-form" method="post" action="@Url.Action("Feedback", "Product")">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="email" value="@Session["u_email"]" />
+                    <input type="hidden" name="pid" value="@Model.CheckoutItem.pid" />
+                    <textarea required name="feedback" class="product-feedback" placeholder="Feedback"></textarea>
+                    <input type="submit" value="Submit" class="feedback-submit-btn"/>
+                </form>
+            </div>
+        }
+    </div>
+</main>
+
+@Scripts.Render("~/bundles/Wishlist")

@@ -1,0 +1,43 @@
+﻿@model List<Hutch.Models.OrderItem>
+
+@{
+    ViewBag.Title = "ViewAllOrders";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/Styles/Admin/ViewAllOrders.css" rel="stylesheet" />
+
+<main class="admin-all-orders-container">
+
+    <div class="all-orders">
+        @foreach (var order in Model)
+        {
+            var base64 = Convert.ToBase64String(order.p_image);
+            var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+            <div class="order-card">
+
+                <div class="order-card-image">
+                    <img src="@imagesrc" alt="@order.p_name" />
+                </div>
+
+                <div class="order-card-content">
+
+                    <div class="order-details">
+                        <h6>@order.p_name</h6>
+                        <span>Invoice Id: @order.invoice_id</span>
+                        <h6>Status: @order.order_status</h6>
+                        <span class="order-buyer">Buyer: @order.email</span>
+                    </div>
+
+
+                    <div class="order-access-btn">
+                        <a href="@Url.Action("UpdateOrder", "Admin", new {oid = order.order_item_id, invoice_id = order.invoice_id, email = order.email, order_status = "Out for delivery"})" class="order-out-btn @(order.order_status == "Out for delivery" ? "displayNone" : "")">Out for delivery</a>
+                        <a href="@Url.Action("UpdateOrder", "Admin", new {oid = order.order_item_id, invoice_id = order.invoice_id, email = order.email, order_status = "Delivered" })" class="order-delivered-btn @(order.order_status == "Delivered" ? "displayNone" : "")">Delivered</a>
+                        <a href="@Url.Action("CancelOrder", "Admin", new {oid = order.order_item_id, invoice_id = order.invoice_id, email = order.email })" class="order-cancel-btn">Cancel</a>
+                    </div>
+                </div>
+                
+
+            </div>
+        }
+    </div>
+</main>

@@ -1,0 +1,131 @@
+﻿@model Hutch.Models.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/Styles/Admin/AddProduct.css" rel="stylesheet" />
+
+<main class="admin-add-product">
+    <div class="admin-add-product-container">
+
+        <div class="admin-add-product-form">
+            @using (Html.BeginForm("AddProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal form-container">
+
+                    <div class="form-left-container">
+                        <h4>Add a new product</h4>
+
+                        <span class="admin-add-product-alert">@ViewBag.Message</span>
+
+                        <div class="product-name">
+                            @Html.LabelFor(model => model.p_name, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.EditorFor(model => model.p_name, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.p_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="product-description">
+                            @Html.LabelFor(model => model.p_desc, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="">
+                                @Html.TextAreaFor(model => model.p_desc)
+                                @Html.ValidationMessageFor(model => model.p_desc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="product-utility-details">
+
+                            <div class="product-quantity">
+                                @Html.LabelFor(model => model.p_qty, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_qty, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_qty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-pricing">
+                                @Html.LabelFor(model => model.p_price, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_price, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_price, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-id">
+                                @Html.LabelFor(model => model.pid, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.pid, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.pid, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-additional-details">
+
+                            <div class="product-category">
+                                @Html.LabelFor(model => model.p_category, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_category, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_category, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-type">
+                                @Html.LabelFor(model => model.p_type, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_type, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_type, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-brand">
+                                @Html.LabelFor(model => model.p_brand, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_brand, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_brand, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-arrival">
+                                @Html.LabelFor(model => model.p_arrival, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="">
+                                    @Html.EditorFor(model => model.p_arrival, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_arrival, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-right-container">
+
+                        <div class="product-image">
+                            
+                            <div class="image-preview-container">
+                                <img id="image-preview" class="image-preview"/>
+                            </div>
+
+                            @Html.LabelFor(model => model.p_image, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="">
+                            <input type="file" id="product-image-upload" name="image" onchange="previewProductImage()" />
+                            @Html.ValidationMessageFor(model => model.p_image, "", new { @class = "text-danger" })
+                        </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <button class="add-product-btn" type="submit">Add product</button>
+            }
+        </div>
+
+    </div>
+
+</main>

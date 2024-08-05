@@ -1,0 +1,136 @@
+﻿@model Hutch.Models.Product
+
+@{
+    ViewBag.Title = "DisableTheProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/Styles/Admin/DisableTheProduct.css" rel="stylesheet" />
+
+<main class="admin-disable-product">
+    <div class="admin-disable-product-container">
+
+        <div class="admin-disable-product-form">
+            @using (Html.BeginForm("DisableTheProduct", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal form-container">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-left-container">
+                        <h4>Disable the product</h4>
+
+                        <div class="product-availability">
+                            <label>To disable the product please type 'unavailable'</label>
+                            <div class="">
+                                @Html.EditorFor(model => model.p_availability, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.p_availability, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="product-name">
+
+                            <div class="">
+                                @Html.HiddenFor(model => model.p_name, new { htmlAttributes = new { } })
+                                @Html.ValidationMessageFor(model => model.p_name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="product-description">
+
+                            <div class="">
+                                @Html.HiddenFor(model => model.p_desc)
+                                @Html.ValidationMessageFor(model => model.p_desc, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="product-utility-details">
+
+                            <div class="product-quantity">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_qty, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_qty, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-pricing">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_price, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_price, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-id">
+                                <div class="">
+                                    @Html.HiddenFor(model => model.pid, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.pid, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="product-additional-details">
+
+                            <div class="product-category">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_category, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_category, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-type">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_type, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_type, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-brand">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_brand, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_brand, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="product-arrival">
+
+                                <div class="">
+                                    @Html.HiddenFor(model => model.p_arrival, new { htmlAttributes = new { } })
+                                    @Html.ValidationMessageFor(model => model.p_arrival, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-right-container">
+
+                        <div class="product-image">
+
+                            @{
+                                var base64 = Convert.ToBase64String(Model.p_image);
+                                var imagesrc = string.Format("data: image/gif; base64, {0}", base64);
+                            }
+
+                            <input hidden name="imagesrc" value="@imagesrc" />
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <button class="disable-product-btn" type="submit">Disable product</button>
+            }
+        </div>
+
+    </div>
+
+</main>

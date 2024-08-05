@@ -1,0 +1,128 @@
+﻿@model Hutch.ViewModels.CartViewModel
+
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@Scripts.Render("~/bundles/modernizr")
+
+<link href="~/Content/Styles/User/Cart.css" rel="stylesheet" />
+
+
+@if (Model.totalItem <= 0)
+{
+    <main class="empty-cart">
+        <h3>Oops! your bag feels empty</h3>
+        <div class="empty-cart-image">
+            <img src="~/Content/Assets/Utility/hippo-empty-cart.png" />
+        </div>
+
+        <a class="wishlist-btn" href="@Url.Action("AllWishlist", "User")">Add from wishlist</a>
+    </main>
+}
+
+
+else
+{
+    <main class="cart">
+        <h3 class="cart-user-name">Hello, @Session["u_name"]</h3>
+        <h2>Your Bag</h2>
+
+        <h2>@ViewBag.message</h2>
+
+        @if (@ViewBag.userErrorMessage != null) { 
+            <div class="userErrorDetails">
+                <h6>@ViewBag.userErrorMessage</h6>
+                <a href="@Url.Action("EditProfile", "User")">Edit your profile</a>
+            </div>
+        }
+        
+
+        <div class="cart-details">
+            <h4>
+                Total
+                <span>(@Model.totalItem items) </span><span>@Model.totalAmount</span>
+            </h4>
+
+        </div>
+
+        <div class="cart-and-order">
+            <div class="cart-item-container">
+                @foreach (var item in Model.Carts)
+                {
+                    var base64 = Convert.ToBase64String(item.p_image);
+                    var imgsrc = string.Format("data: image/gif; base64, {0}", base64);
+
+                    <div class="cart-item-card">
+
+                        <div class="cart-item-image">
+                            <img src="@imgsrc" alt="@item.p_name"/>
+                        </div>
+                        <div class="cart-item-details">
+                            <h5>@item.p_name</h5>
+                            <span>@item.p_price</span>
+                            <div class="cart-item-quantity">
+
+                                <a href="@Url.Action("DecreaseQuantity", "Product", new {pid = item.pid})" data-product-id="@item.pid" class="item-increase-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256">
+                                        <path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128Z"></path>
+                                    </svg>
+                                </a>
+
+                                <span>@item.p_quantity</span>
+
+                                <a href="@Url.Action("IncreaseQuantity", "Product", new {pid = item.pid})">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="#000000" viewBox="0 0 256 256">
+                                        <path d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"></path>
+                                    </svg>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        @if (item.p_quantity_available == 0)
+                        {
+                            <span class="item-quantity-warning">Reduce items</span>
+                        }
+
+                        <a href="@Url.Action("RemoveFromCart", "Product", new {pid = item.pid})" class="cart-item-remove">Remove</a>
+
+                    </div>
+                }
+
+            </div>
+
+            <div class="order-summary-container">
+                <h4>Order Summary</h4>
+
+                <div class="order-details">
+
+                    <div class="order-items">
+                        <span>@Model.totalItem items</span>
+                        <span>@Model.totalAmount</span>
+                    </div>
+
+                    <div class="order-delivery">
+                        <span>Delivery</span>
+                        <span>Free</span>
+                    </div>
+
+                    <div class="order-total-amount">
+                        <span>Total</span>
+                        <span>@Model.totalAmount</span>
+                    </div>
+                    <h6>(Inclusive of all taxes)</h6>
+                </div>
+
+                <span>Currently we are accepting only card</span>
+                <a href="@Url.Action("Checkout", "CheckOut")">Place Order</a>
+            </div>
+        </div>
+
+
+
+
+    </main>
+}
+
+@Scripts.Render("~/bundles/Wishlist")
